@@ -9,7 +9,7 @@ set -e
 # ================================================
 # CONFIGURATION - CHANGE THIS BEFORE RUNNING!
 # ================================================
-REPO_URL="https://github.com/YOUR_USERNAME/attendance-payroll-monitor.git"
+REPO_URL="https://github.com/Datta23-s/cloud-computing-final-project.git"
 APP_DIR="$HOME/attendpay"
 
 echo "=== Step 1: Update packages ==="
@@ -31,7 +31,7 @@ else
 fi
 
 # IMPORTANT: Establish working directory explicitly for all future steps
-cd $APP_DIR
+cd $APP_DIR/attendance-payroll-monitor
 
 echo "=== Step 5: Install & Build Frontend ==="
 cd frontend
