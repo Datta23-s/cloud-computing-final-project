@@ -1,0 +1,23 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Environment variables — NEVER commit real credentials
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AWS
+*.pem
