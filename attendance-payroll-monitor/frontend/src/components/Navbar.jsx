@@ -162,5 +162,11 @@ const styles = {
     cursor: 'pointer',
     marginBottom: 16,
     transition: 'all 0.2s ease',
+  },
+  lastLogin: {
+    fontSize: 11,
+    padding: '0 12px 12px',
+    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+    marginBottom: 16,
   }
 };

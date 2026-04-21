@@ -45,12 +45,12 @@ export default function Login({ setAuth }) {
 
         <form onSubmit={handleSubmit} style={styles.form}>
           <div style={styles.inputGroup}>
-            <label style={styles.label}>Email Address</label>
+            <label style={styles.label}>Enter Email</label>
             <div style={styles.inputWrapper}>
               <Mail style={styles.inputIcon} size={18} />
               <input
                 type="email"
-                placeholder="admin@attendpay.com"
+                placeholder="Enter Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={styles.input}
