@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { markAttendance, getAttendanceByDate, getAllAttendance, getAllEmployees } = require('../services/dynamodb');
+const { markAttendance, getAttendanceByDate, getAllAttendance, getAllEmployees } = require('../services/dbService');
 const { pushAttendanceRate, sendLogEvent } = require('../services/cloudwatch');
 
 // Check-in

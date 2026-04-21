@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { generatePayslip } = require('../services/pdfGenerator');
 const { uploadPDF, listPayslips } = require('../services/s3');
-const { getAllEmployees } = require('../services/dynamodb');
+const { getAllEmployees } = require('../services/dbService');
 const { pushPayrollGenerated, sendLogEvent } = require('../services/cloudwatch');
 
 // Generate payslip for an employee

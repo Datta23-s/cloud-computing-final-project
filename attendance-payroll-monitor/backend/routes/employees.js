@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { addEmployee, getAllEmployees, getEmployeeById, updateEmployee, deleteEmployee } = require('../services/dynamodb');
+const { addEmployee, getAllEmployees, getEmployeeById, updateEmployee, deleteEmployee } = require('../services/dbService');
 const { sendLogEvent } = require('../services/cloudwatch');
 
 // Get all employees

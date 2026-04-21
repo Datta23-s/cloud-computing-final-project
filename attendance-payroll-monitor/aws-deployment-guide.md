@@ -158,11 +158,11 @@ pm2 restart attendpay-backend
 ### 3. Application Load Balancer (ELB Health Check included!)
 1. Under **Load Balancing**, click **Load Balancers** -> **Create** -> **Application Load Balancer**.
 2. Name: `AttendPay-ELB` (Internet-facing, IPv4). Select all Availability Zones.
-3. Security Groups: Create/attach a security group that allows HTTP(80) and forwards to port 3000.
+3. Security Groups: Create/attach a security group that allows HTTP (Port 80) from anywhere.
 4. **Listeners and routing:** 
    - Click "Create Target Group".
-   - Target type: Instances. Protocol: HTTP, Port: 3000.
-   - **Health Checks Path:** Change this to `/health` (This links to your Express `server.js` health endpoint successfully proving health!).
+   - Target type: Instances. Protocol: HTTP, Port: 80.
+   - **Health Checks Path:** Change this to `/` (This hits Nginx on your server, proving your instance is healthy).
    - Save Target Group and select it in the Load Balancer.
 5. Click **Create Load Balancer**.
 
