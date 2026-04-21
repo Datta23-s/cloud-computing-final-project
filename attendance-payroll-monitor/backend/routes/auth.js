@@ -20,6 +20,12 @@ router.post('/login', async (req, res) => {
     if ((user && (await user.matchPassword(password))) || 
         (email === adminEmail && password === adminPassword)) {
       
+      let activeUser = user;
+      if (!activeUser) {
+        // Create the user in DB if they only existed in .env
+        activeUser = await User.create({ email: adminEmail, password: adminPassword });
+      }
+
       // Update last login timestamp
       activeUser.lastLogin = new Date();
       await activeUser.save();
