@@ -17,16 +17,23 @@ const PORT = process.env.PORT || 5000;
 // Seed admin user
 const seedAdmin = async () => {
   try {
-    const adminExists = await User.findOne({ email: process.env.ADMIN_EMAIL });
-    if (!adminExists) {
-      await User.create({
-        email: process.env.ADMIN_EMAIL,
-        password: process.env.ADMIN_PASSWORD
-      });
-      console.log('✅ Admin user seeded successfully');
+    const email = process.env.ADMIN_EMAIL || 'admin@attendpay.com';
+    const password = process.env.ADMIN_PASSWORD || 'admin123';
+    
+    let admin = await User.findOne({ email });
+    
+    if (!admin) {
+      admin = new User({ email, password });
+      await admin.save();
+      console.log('✅ Admin user created successfully');
+    } else {
+      // Always update password to match .env in case it changed
+      admin.password = password;
+      await admin.save();
+      console.log('✅ Admin credentials synced with .env');
     }
   } catch (err) {
-    console.error('Error seeding admin:', err);
+    console.error('❌ Error seeding admin:', err);
   }
 };
 

@@ -86,12 +86,6 @@ export default function Login({ setAuth }) {
             {loading ? 'Authenticating...' : 'Sign In'}
           </button>
         </form>
-
-        <div style={styles.footer}>
-          <p style={styles.footerText}>
-            Cloud Computing Final Project • 2026
-          </p>
-        </div>
       </div>
     </div>
   );
@@ -206,18 +200,5 @@ const styles = {
     color: '#fca5a5',
     fontSize: 13,
     marginBottom: 24,
-  },
-  footer: {
-    marginTop: 32,
-    textAlign: 'center',
-    borderTop: '1px solid rgba(255, 255, 255, 0.05)',
-    paddingTop: 24,
-  },
-  footerText: {
-    fontSize: 11,
-    color: '#6366f1',
-    fontWeight: 500,
-    textTransform: 'uppercase',
-    letterSpacing: '1px',
   }
 };
