@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Users, CalendarCheck, FileText, BellRing, Activity } from 'lucide-react';
+import { LayoutDashboard, Users, CalendarCheck, FileText, BellRing, Activity, LogOut } from 'lucide-react';
 
 const navItems = [
   { path: '/dashboard',  label: 'Dashboard',   icon: LayoutDashboard },
@@ -10,7 +10,7 @@ const navItems = [
   { path: '/alerts',     label: 'System Alerts', icon: BellRing },
 ];
 
-export default function Navbar() {
+export default function Navbar({ onLogout }) {
   return (
     <aside style={styles.sidebar}>
       {/* Logo */}
@@ -43,6 +43,11 @@ export default function Navbar() {
 
       {/* Footer */}
       <div style={styles.sidebarFooter}>
+        <button onClick={onLogout} style={styles.logoutBtn}>
+          <LogOut size={18} />
+          <span>Logout</span>
+        </button>
+
         <div style={styles.systemBadge}>
           <div style={styles.statusIndicator}></div>
           <div>
@@ -141,5 +146,21 @@ const styles = {
     borderRadius: '50%',
     background: 'var(--success)',
     boxShadow: '0 0 8px var(--success)',
+  },
+  logoutBtn: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+    width: '100%',
+    padding: '10px 12px',
+    background: 'transparent',
+    border: '1px solid rgba(239, 68, 68, 0.2)',
+    borderRadius: 10,
+    color: '#fca5a5',
+    fontSize: 14,
+    fontWeight: 500,
+    cursor: 'pointer',
+    marginBottom: 16,
+    transition: 'all 0.2s ease',
   }
 };
